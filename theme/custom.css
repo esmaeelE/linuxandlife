@@ -16,12 +16,6 @@
     --accent-strong: #9c4d22;
     --accent-soft: rgba(193, 99, 47, 0.12);
     --accent-soft-2: rgba(193, 99, 47, 0.22);
-    --terminal-bg: #1e1f26;
-    --terminal-bar: #2a2b34;
-    --terminal-fg: #e7e6e2;
-    --terminal-dot-red: #ff5f57;
-    --terminal-dot-amber: #febc2e;
-    --terminal-dot-green: #28c840;
 }
 
 /* Warmer, brighter accent on the dark built-in themes so it still pops */
@@ -205,49 +199,20 @@ blockquote:has(> p:first-child:only-child) {
     border-right-color: var(--terminal-dot-amber);
 }
 
-/* ── Code blocks — styled like a real terminal window ── */
+/* ── Code blocks — simple, clean style ── */
 pre {
-    position: relative;
     direction: ltr;
     text-align: left;
     unicode-bidi: isolate;
     font-family: 'JetBrains Mono', 'Courier New', monospace;
     font-size: 0.87rem;
     line-height: 1.7;
-    background: var(--terminal-bg) !important;
-    color: var(--terminal-fg);
-    border-radius: 10px;
-    padding: 2.6em 1.3em 1.2em;
+    background: var(--quote-bg);
+    border: 1px solid var(--table-border-color);
+    border-radius: 6px;
+    padding: 1.1em 1.3em;
     overflow-x: auto;
     margin: 1.6em 0;
-    box-shadow: 0 6px 20px -8px rgba(0, 0, 0, 0.35);
-}
-
-/* Title bar */
-pre::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2.1em;
-    background: var(--terminal-bar);
-    border-radius: 10px 10px 0 0;
-}
-
-/* Traffic-light dots, mac-terminal style, painted above the bar */
-pre::after {
-    content: '';
-    position: absolute;
-    top: 0.85em;
-    left: 1.1em;
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    background: var(--terminal-dot-red);
-    box-shadow:
-        18px 0 0 var(--terminal-dot-amber),
-        36px 0 0 var(--terminal-dot-green);
 }
 
 pre code {
@@ -390,12 +355,7 @@ mark {
         direction: ltr;
     }
     pre {
-        box-shadow: none;
         border: 1px solid var(--table-border-color);
-        padding-top: 1.2em;
-    }
-    pre::before, pre::after {
-        display: none;
     }
 }
 
